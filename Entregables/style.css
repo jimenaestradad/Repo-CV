@@ -93,3 +93,11 @@ section {
     margin: 1.5rem auto;
   }
 }
+
+@media (min-width: 901px) {
+  section,
+  nav {
+    max-width: 850px;
+    margin: 2rem auto;
+  }
+}
