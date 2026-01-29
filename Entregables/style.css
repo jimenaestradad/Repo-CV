@@ -1,0 +1,103 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f1f5f9;
+  color: #334155;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+header {
+  background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+header img {
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+
+nav {
+  background-color: #ffffff;
+  margin: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #1e40af;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+
+@media (max-width: 600px) {
+  header img {
+    width: 150px;
+    height: auto;
+  }
+
+  section,
+  nav {
+    margin: 1rem;
+    padding: 1.2rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  section,
+  nav {
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (min-width: 901px) {
+  section,
+  nav {
+    max-width: 850px;
+    margin: 2rem auto;
+  }
+}
