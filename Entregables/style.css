@@ -12,5 +12,53 @@ h1, h2 {
   margin-bottom: 0.5rem;
 }
 
+header {
+  background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+header img {
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+
+nav {
+  background-color: #ffffff;
+  margin: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #1e40af;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
 
 
