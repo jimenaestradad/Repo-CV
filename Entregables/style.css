@@ -62,3 +62,13 @@ li {
 }
 
 
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: grid;
+  gap: 0.75rem;
+}
+
