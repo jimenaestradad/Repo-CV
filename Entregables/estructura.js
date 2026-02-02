@@ -11,3 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+  const btn = document.getElementById("toggleExperience");
+  const experiencia = document.getElementById("experiencia");
+
+  btn.addEventListener("click", function () {
+    if (experiencia.style.display === "none") {
+      experiencia.style.display = "block";
+    } else {
+      experiencia.style.display = "none";
+    }
+  });
+
