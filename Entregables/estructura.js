@@ -22,3 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  const themeBtn = document.getElementById("toggleTheme");
+
+  themeBtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+  });
+
