@@ -28,3 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.toggle("dark-mode");
   });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btnContact = document.getElementById("toggleContact");
+  const contacto = document.getElementById("contacto");
+
+  if (btnContact && contacto) {
+    btnContact.addEventListener("click", function () {
+      contacto.style.display =
+        contacto.style.display === "none" ? "block" : "none";
+    });
+  }
+});
+
