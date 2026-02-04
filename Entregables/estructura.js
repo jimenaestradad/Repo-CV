@@ -41,3 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+function filterSkills() {
+  const input = event.target.value.toLowerCase();
+  const skills = document.querySelectorAll("#skills-list li");
+
+  skills.forEach(skill => {
+    skill.style.display = skill.textContent.toLowerCase().includes(input)
+      ? ""
+      : "none";
+  });
+}
