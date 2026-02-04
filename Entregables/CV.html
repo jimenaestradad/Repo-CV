@@ -9,6 +9,10 @@
 
 <body>
 
+<button id="toggleTheme">
+Modo oscuro / claro
+</button>
+
 <header>
     <h1>Mi CV</h1> 
     <img 
@@ -25,7 +29,13 @@
 </header>
 </header>
 
+
 <br>
+<button id="toggleContact" class="mb-3">
+  Mostrar / Ocultar Contacto
+</button>
+
+<section id="contacto" class="mx-3 mb-4">
 <nav>
     <a href="https://github.com/jimenaestradad"target="_blank">Ver mi Github</a>
     <br>
@@ -33,6 +43,8 @@
     <br>
     <a href="mailto:mjestradad@ufm.edu">Contáctame</a>
 </nav>
+</section>
+
 <section id="idiomas" class="card p-3 mb-4 mx-3">
   <h2 class="card-title">Idiomas</h2>
   <ul class="card-text">
@@ -42,7 +54,27 @@
 </section>
 <br>
 
-<section id="experiencia" class="mx-3 mb-5">
+<section id="skills" class="card p-3 mb-4 mx-3">
+  <h2 class="card-title">Skills</h2>
+
+  <input
+    type="text"
+    class="form-control mb-3"
+    placeholder="Buscar skill..."
+    onkeyup="filterSkills(event)"
+  >
+
+  <ul id="skills-list" class="list-group">
+    <li class="list-group-item">HTML</li>
+    <li class="list-group-item">Python</li>
+    <li class="list-group-item">Trabajo en equipo</li>
+    <li class="list-group-item">Comunicación efectiva</li>
+    <li class="list-group-item">Hablar en público</li>
+  </ul>
+</section>
+
+
+<section id="educación" class="mx-3 mb-5">
   <h2>Educación</h2>
  <table class="table table-striped table-bordered">
     <caption>Historial académico</caption>
@@ -67,6 +99,7 @@
     </tbody>
   </table>
 </section>
+
 
 <section id="experiencia" class="mx-3 mb-5">
   <h2>Experiencia Laboral</h2>
@@ -93,7 +126,17 @@
       </tr>
     </tbody>
   </table>
+
 </section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<section id="botonexperiencia" class="mx-3 mb-5"> 
+
+<button id="toggleExperience">
+     Mostrar / Ocultar Experiencia
+    </button>
+</section>
+
+<script src=estructura.js></script>
+<h3 id="greeting"></h3>
 </body>
 </html>
+
