@@ -1,0 +1,32 @@
+<div class="header-wrapper">
+
+  <div class="header-content">
+
+    <div class="image-section">
+      <img src="/yo.jpg"> 
+    </div>
+
+    <div class="text-section">
+
+      <p class="greeting">
+        {{ greeting }}
+      </p>
+
+      <h1 class="name">
+        {{ firstName | titlecase }}
+        {{ lastName | titlecase }}
+      </h1>
+
+      <p class="subtitle">
+        {{ title }}
+      </p>
+
+      <button class="download-btn" (click)="downloadCV()">
+        Descargar CV
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
