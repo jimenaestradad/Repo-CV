@@ -39,6 +39,43 @@ export class Header {
       const imgData = canvas.toDataURL('image/png');
 
       const pdf = new jsPDF('p', 'mm', 'a4');
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgWidthPx = imgProps.width;
+      const imgHeightPx = imgProps.height;
+
+      const pdfWidth = pageWidth;
+      const pdfHeight = (imgHeightPx * pdfWidth) / imgWidthPx;
+
+      if (pdfHeight <= pageHeight) {
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      } else {
+        const pxPerMm = imgHeightPx / pdfHeight;
+        const pageHeightPx = Math.floor(pageHeight * pxPerMm);
+        let remainingHeight = imgHeightPx;
+        let position = 0;
+
+        while (remainingHeight > 0) {
+          const pageCanvas = document.createElement('canvas');
+          pageCanvas.width = canvas.width;
+          pageCanvas.height = Math.min(pageHeightPx, remainingHeight);
+          const pageCtx = pageCanvas.getContext('2d')!;
+          pageCtx.drawImage(
+            canvas,
+            0, position, canvas.width, pageCanvas.height,
+            0, 0, pageCanvas.width, pageCanvas.height
+          );
+          const pageData = pageCanvas.toDataURL('image/png');
+          const pageImgProps = pdf.getImageProperties(pageData);
+          const pageImgHeightMm = (pageImgProps.height * pdfWidth) / pageImgProps.width;
+          if (position > 0) pdf.addPage();
+          pdf.addImage(pageData, 'PNG', 0, 0, pdfWidth, pageImgHeightMm);
+          remainingHeight -= pageCanvas.height;
+          position += pageCanvas.height;
+
+      const pdf = new jsPDF('p', 'mm', 'a4');
       const pageWidth = pdf.internal.pageSize.getWidth(); // mm
       const pageHeight = pdf.internal.pageSize.getHeight(); // mm
 
@@ -51,7 +88,6 @@ export class Header {
       
       const pxPerMm = 96 / 25.4;
 
-      // dimensiones del canvas en px
       const canvasWpx = canvas.width;
       const canvasHpx = canvas.height;
 
@@ -87,6 +123,7 @@ export class Header {
 
           yPosPx += sliceHeightPx;
           pageIndex++;
+
         }
       }
 
