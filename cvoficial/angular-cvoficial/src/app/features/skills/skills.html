@@ -1,0 +1,46 @@
+<section id="skills" class="skills-section container" aria-labelledby="skills-title">
+  <h2 id="skills-title">Otras Habilidades</h2>
+
+  <div class="cv-content">
+    <div class="skills-card" role="region" aria-labelledby="skills-title">
+
+      <div class="controls">
+        <label for="skills-search" class="visually-hidden">Buscar Skill</label>
+        <input id="skills-search"
+               type="search"
+               placeholder="Buscar habilidad..."
+               [(ngModel)]="searchTerm"
+               aria-label="Buscar habilidades"
+               class="search-input" />
+
+        <button type="button" class="btn sort-btn" (click)="toggleSort()" [attr.aria-pressed]="sortAsc">
+          Orden: {{ sortAsc ? 'A → Z' : 'Z → A' }}
+          <span class="sr-only"> (clic para alternar)</span>
+        </button>
+      </div>
+
+      <p class="results" aria-live="polite">{{ resultsLabel() }}</p>
+
+      <table class="skills-table" role="table" aria-describedby="skills-desc">
+        <caption id="skills-desc" class="visually-hidden">Lista de habilidades filtrables y ordenables</caption>
+        <thead>
+          <tr>
+            <th scope="col">Habilidad</th>
+            <th scope="col" class="col-cat">Categoría</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let s of filteredSkills; let i = index" role="row">
+            <td role="cell">{{ s.name }}</td>
+            <td role="cell" class="col-cat">{{ s.category || 'General' }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p *ngIf="filteredSkills.length === 0" class="no-results" role="status">
+        No se encontraron habilidades para la búsqueda.
+      </p>
+    </div>
+  </div>
+</section>

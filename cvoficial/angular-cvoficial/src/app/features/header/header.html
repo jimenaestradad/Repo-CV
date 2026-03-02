@@ -1,0 +1,28 @@
+<header class="cv-hero container" role="banner" aria-label="Encabezado del CV">
+  <div class="hero-left" aria-hidden="false">
+    <img src="/yo.jpg" alt="Foto de {{ cv.name }}" class="photo" />
+  </div>
+
+  <div class="hero-right">
+    <h1 class="name">{{ cv.name }}</h1>
+    <p class="subtitle">{{ cv.title }}</p>
+
+
+    <nav class="links" aria-label="Enlaces de contacto" role="navigation">
+      <a [href]="cv.links.mailto" class="link-btn" role="button" aria-label="Enviar correo">Correo</a>
+      <a [href]="cv.links.github" target="_blank" rel="noopener" class="link-btn" role="button" aria-label="Abrir GitHub">GitHub</a>
+      <a [href]="cv.links.linkedin" target="_blank" rel="noopener" class="link-btn" role="button" aria-label="Abrir LinkedIn">LinkedIn</a>
+    </nav>
+
+    <div class="actions" role="group" aria-label="Acciones">
+    
+      <button class="btn toggle" (click)="theme.toggle()" aria-pressed="{{ theme.isDark() }}">
+        {{ theme.isDark() ? 'Modo Claro' : 'Modo Oscuro' }}
+      </button>
+
+      <button class="btn primary" (click)="downloadMockPdf()" aria-label="Descargar como PDF">
+        Descargar como PDF
+      </button>
+    </div>
+  </div>
+</header>
