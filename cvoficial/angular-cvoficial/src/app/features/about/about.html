@@ -1,0 +1,30 @@
+<section id="about" class="about-section container" aria-labelledby="about-title">
+
+  <h2 id="about-title">Sobre mí</h2>
+
+  <p class="bio">
+    Estudiante de Ingeniería en Computer Science de segundo año,
+    con un perfil proactivo, responsable y eficiente.
+    Me caracterizo por mi carisma y excelentes habilidades interpersonales,
+    lo que me permite adaptarme con facilidad a distintos entornos de trabajo
+    y colaborar eficazmente en equipo.
+  </p>
+
+  <div class="contact-info" aria-label="Información de contacto">
+    <div class="contact-item">
+      <strong>Teléfono:</strong>
+      <a href="tel:+50230628209">{{ cv.contact.phone }}</a>
+    </div>
+
+    <div class="contact-item">
+      <strong>Email:</strong>
+      <a [href]="cv.links.mailto">{{ cv.contact.email }}</a>
+    </div>
+
+    <div class="contact-item">
+      <strong>Dirección:</strong>
+      <span>{{ cv.contact.address }}</span>
+    </div>
+  </div>
+
+</section>

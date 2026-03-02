@@ -1,0 +1,24 @@
+
+.experience-section { padding: 1.5rem 0; }
+
+.timeline { position: relative; margin-top: 1rem; padding-left: 40px; }
+.timeline::before { content:""; position:absolute; left:18px; top:0; bottom:0; width:3px; background: rgba(55,88,214,0.14); border-radius:4px; }
+
+.timeline-item { margin-bottom: 1.6rem; }
+.marker {
+  position: absolute;
+  left: 3px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+}
+.card { margin-left:34px; background:var(--card); border-radius:12px; padding:1rem; box-shadow:0 10px 24px rgba(0,0,0,0.05); }
+.card-head { display:flex; justify-content:space-between; margin-bottom:.4rem; }
+.period{ font-weight:700; color:var(--muted); font-size:.9rem; min-width:120px; }
+.company{ font-weight:800; color:var(--text); }
+.role{ font-weight:700; color:var(--accent); margin-bottom:.4rem; }
+.details { margin-top:.6rem; border-top:1px dashed rgba(0,0,0,0.06); padding-top:.6rem; }
+.details li { color:var(--muted); margin-bottom:.45rem; }

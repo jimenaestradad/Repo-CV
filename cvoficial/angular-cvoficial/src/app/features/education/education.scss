@@ -1,0 +1,64 @@
+.education-section {
+  padding: 1rem 0;
+}
+
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+  border-top: 4px solid var(--accent); 
+}
+
+.edu-table caption {
+  text-align: left;
+  font-weight: 700;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+  color: var(--muted);
+}
+
+.edu-table th {
+  text-align: left;
+  font-weight: 800;
+  padding: 1rem 1.5rem;
+  color: var(--accent);           
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.95rem;
+}
+
+.edu-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  color: var(--text);
+  transition: background 0.2s ease;
+}
+
+.edu-table tbody tr:hover td {
+  background: rgba(55, 88, 214, 0.04);
+}
+
+.edu-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.dark-mode .edu-table {
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  border-top: 4px solid var(--accent);
+}
+
+.dark-mode .edu-table th {
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+
+.dark-mode .edu-table td {
+  border-bottom-color: rgba(255,255,255,0.05);
+}
+
+.dark-mode .edu-table tbody tr:hover td {
+  background: rgba(75, 107, 255, 0.08);
+}
