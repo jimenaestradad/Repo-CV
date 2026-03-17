@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { CV } from '../../data/cvoficial-data';
 import { ThemeService } from '../../core/theme.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
+  imports: [RouterModule],
   templateUrl: './header.html',
   styleUrls: ['./header.scss']
 })

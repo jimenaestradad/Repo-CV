@@ -1,0 +1,15 @@
+<h2>Proyectos</h2>
+
+<div *ngFor="let repo of repos">
+
+  <h3>{{ repo.name }}</h3>
+
+  <p>{{ repo.description }}</p>
+
+  <p>⭐ {{ repo.stargazers_count }}</p>
+
+  <a [href]="repo.html_url" target="_blank">
+    Ver repositorio
+  </a>
+
+</div>

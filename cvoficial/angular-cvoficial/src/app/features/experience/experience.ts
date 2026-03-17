@@ -14,7 +14,7 @@ export class Experience {
   timelineHtml: SafeHtml = '';
 
   constructor(private sanitizer: DomSanitizer) {
-    console.log('CV DATA (Experience):', this.cv); // debug simple
+    console.log('CV DATA (Experience):', this.cv);
     this.timelineHtml = this.buildTimelineHtml();
   }
 
@@ -44,8 +44,8 @@ export class Experience {
 
       html += ''
         +       '</ul>'
-        +     '</div>' // .details
-        +   '</div>' // .card
+        +     '</div>'
+        +   '</div>' 
         + '</article>';
     }
 

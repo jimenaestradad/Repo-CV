@@ -1,0 +1,28 @@
+
+.cv-section {
+  padding: 2.5rem 0;
+  transition: opacity 300ms ease, filter 300ms ease, transform 300ms ease;
+}
+
+:root:not([data-focus]) .cv-section {
+  opacity: 1;
+  pointer-events: auto;
+  filter: none;
+}
+
+:root[data-focus] .cv-section {
+  opacity: 0.18;
+  pointer-events: none; 
+  filter: blur(0.1px);
+}
+
+:root[data-focus="about"]  #about,
+:root[data-focus="experience"]  #experience,
+:root[data-focus="skills"]  #skills,
+:root[data-focus="education"]  #education {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0);
+  filter: none !important;
+}
+
