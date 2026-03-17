@@ -1,6 +1,6 @@
-/* src/styles.scss (reemplaza o añade las reglas de :root y .dark-mode) */
+
 :root{
-  --accent: #3758d6;     /* azul accesible */
+  --accent: #3758d6;     
   --muted: #6b7280;
   --bg: #fafafa;
   --text: #0f172a;
@@ -12,17 +12,67 @@ body {
   color: var(--text);
 }
 
-/* Dark mode overrides */
+
 .dark-mode {
-  --bg: #071025;     /* fondo oscuro */
-  --text: #e6eef8;   /* texto claro */
-  --card: #07192a;   /* tarjetas ligeramente más claras que el fondo */
+  --bg: #071025;     
+  --text: #e6eef8;  
+  --card: #07192a;   
   --muted: #9aa6c2;
-  --accent: #4b6bff; /* azul vivo para botones en dark */
+  --accent: #4b6bff; 
 }
 
-/* Ensure links (a) visible if default color used anywhere */
+
 a { color: var(--accent); }
 
-/* container utility (if not already defined) */
+
 .container { max-width: 980px; margin: 0 auto; padding: 0 1rem; }
+
+.main-navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-navbar a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #444;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.main-navbar a:hover {
+  background: rgba(55, 88, 214, 0.08);
+  color: var(--accent);
+}
+
+.main-navbar a.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* Dark mode */
+.dark-mode .main-navbar {
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.dark-mode .main-navbar a {
+  color: #ccc;
+}
+
+.dark-mode .main-navbar a.active {
+  background: var(--accent);
+  color: white;
+}
+
+.page-content {
+  padding-top: 2rem;
+}
