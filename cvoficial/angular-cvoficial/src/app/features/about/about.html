@@ -2,13 +2,14 @@
 
   <h2 id="about-title">Sobre mí</h2>
   
-<div *ngIf="quote">
-  <p>"{{ quote.content }}"</p>
-  <p>— {{ quote.author }}</p>
-</div>
+  <!-- Quote -->
+  <div *ngIf="quote" class="quote-box">
+    <p>"{{ quote }}"</p>
+    <button (click)="loadQuote()">Nueva Quote</button>
+  </div>
 
   <p class="bio">
-  {{"Estudiante de Ingeniería en Computer Science de segundo año, con un perfil proactivo, responsable y eficiente. Me caracterizo por mi carisma y excelentes habilidades interpersonales,lo que me permite adaptarme con facilidad a distintos entornos de trabajo y colaborar eficazmente en equipo." | truncate:120 }}
+    {{"Estudiante de Ingeniería en Computer Science de segundo año, con un perfil proactivo, responsable y eficiente. Me caracterizo por mi carisma y excelentes habilidades interpersonales, lo que me permite adaptarme con facilidad a distintos entornos de trabajo y colaborar eficazmente en equipo." | truncate:120 }}
   </p>
 
   <div class="contact-info" aria-label="Información de contacto">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CV } from '../../data/cvoficial-data';
 import { QuoteService } from '../../services/quote';
 import { TruncatePipe } from '../../Pipes/truncate-pipe';
@@ -8,30 +8,28 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   selector: 'app-about',
   standalone: true,
   templateUrl: './about.html',
-  imports: [TruncatePipe, CommonModule],
-  styleUrl: './about.scss'
+  styleUrls: ['./about.scss'],
+  imports: [TruncatePipe, CommonModule]
 })
-export class About implements OnInit {
+export class About implements AfterViewInit {
 
   cv = CV;
-  quote: any;
+  quote: string = '';
 
   constructor(
     private quoteService: QuoteService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
-  ngOnInit() {
-
+  ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-
-      this.quoteService.getQuote().subscribe((data:any)=>{
-        console.log(data);
-        this.quote = data;
-      });
-
+      this.loadQuote();
     }
-
   }
 
+  loadQuote() {
+    this.quoteService.getQuote().subscribe((data: any) => {
+      this.quote = data.slip.advice;
+    });
+  }
 }
