@@ -1,18 +1,12 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { RouterModule, RouterOutlet } from '@angular/router';
-=======
->>>>>>> origin/dev
 import { CV } from '../../data/cvoficial-data';
 import { ThemeService } from '../../core/theme.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-<<<<<<< HEAD
   imports: [RouterModule],
-=======
->>>>>>> origin/dev
   templateUrl: './header.html',
   styleUrls: ['./header.scss']
 })
@@ -34,10 +28,7 @@ export class Header {
       ]);
 
       const html2canvas = (html2canvasModule as any).default ?? html2canvasModule;
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/dev
       const scale = 2;
       const canvas: HTMLCanvasElement = await html2canvas(element, {
         scale,
@@ -48,7 +39,7 @@ export class Header {
       });
 
       const imgData = canvas.toDataURL('image/png');
-<<<<<<< HEAD
+
       const pdf = new jsPDF('p', 'mm', 'a4');
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
@@ -85,7 +76,7 @@ export class Header {
           pdf.addImage(pageData, 'PNG', 0, 0, pdfWidth, pageImgHeightMm);
           remainingHeight -= pageCanvas.height;
           position += pageCanvas.height;
-=======
+
 
       const pdf = new jsPDF('p', 'mm', 'a4');
       const pageWidth = pdf.internal.pageSize.getWidth(); // mm
@@ -100,7 +91,7 @@ export class Header {
       
       const pxPerMm = 96 / 25.4;
 
-      // dimensiones del canvas en px
+
       const canvasWpx = canvas.width;
       const canvasHpx = canvas.height;
 
@@ -136,7 +127,7 @@ export class Header {
 
           yPosPx += sliceHeightPx;
           pageIndex++;
->>>>>>> origin/dev
+
         }
       }
 
