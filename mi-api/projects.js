@@ -75,3 +75,19 @@ app.patch('/testimonials/:id', (req, res) => {
   testimonials[index] = { ...testimonials[index], ...req.body };
   res.json(testimonials[index]);
 });
+
+// DELETE /testimonials/:id - Eliminar un testimonio
+app.delete('/testimonials/:id', (req, res) => {
+  const index = testimonials.findIndex(t => t.id === parseInt(req.params.id));
+
+  if (index === -1) {
+    return res.status(404).json({ error: 'Referencia no encontrada' });
+  }
+
+  const deleted = testimonials.splice(index, 1);
+  res.json({ message: 'Referencia eliminada', testimonial: deleted[0] });
+});
+
+app.listen(PORT, () => {
+console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
