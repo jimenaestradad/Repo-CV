@@ -8,76 +8,84 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-// Base de datos en memoria
-let projects = [
-  { id: 1, name: 'Mi App Angular', stars: 5 },
-  { id: 2, name: 'Mi API Express', stars: 8 },
-  { id: 3, name: 'Portfolio Web', stars: 4 },
+let testimonials = [
+  {
+    id: 1,
+    name: "Cristina Hernández",
+    relation: "Coordinadora de Anfitriones UFM",
+    message: "Excelente colaboradora, muy comprometida y con gran capacidad de liderazgo.",
+    date: "2026-03-18"
+  },
+  {
+    id: 2,
+    name: "Mayra Rámirez",
+    relation: "Directora de Atención al Estudiante UFM",
+    message: "Muy profesional y dedicada, siempre dispuesta a ayudar y mejorar los procesos.",
+    date: "2026-03-05"
+  }
 ];
-
-let nextId = 4;
-
+let nextId = 3;
 // GET / - Bienvenida
 app.get('/', (req, res) => {
-  res.json({ message: 'Bienvenido a la API de Proyectos' });
+  res.json({ message: 'Bienvenido a la sección de Referencias' });
 });
 
-// GET /projects - Ver todos los proyectos
-app.get('/projects', (req, res) => {
-  res.json(projects);
+// GET /testimonials - Ver todos los testimonios
+app.get('/testimonials', (req, res) => {
+  res.json(testimonials);
 });
 
-// GET /projects/:id - Ver un proyecto específico
-app.get('/projects/:id', (req, res) => {
-  const project = projects.find(p => p.id === parseInt(req.params.id));
+// GET /testimonials/:id - Ver un testimonio específico
+app.get('/testimonials/:id', (req, res) => {
+  const testimonial = testimonials.find(t => t.id === parseInt(req.params.id));
 
-  if (!project) {
-    return res.status(404).json({ error: 'Proyecto no encontrado' });
+  if (!testimonial) {
+    return res.status(404).json({ error: 'Referencia no encontrada' });
   }
 
-  res.json(project);
+  res.json(testimonial);
 });
 
-// POST /projects - Crear un proyecto
-app.post('/projects', (req, res) => {
+// POST /testimonials - Crear un testimonio
+app.post('/testimonials', (req, res) => {
   const { name, stars } = req.body;
 
   if (!name) {
     return res.status(400).json({ error: 'El campo "name" es requerido' });
   }
 
-  const newProject = {
+  const newTestimonial = {
     id: nextId++,
     name,
     stars: stars || 0,
   };
 
-  projects.push(newProject);
-  res.status(201).json(newProject);
+  testimonials.push(newTestimonial);
+  res.status(201).json(newTestimonial);
 });
 
-// PATCH /projects/:id - Actualizar un proyecto
-app.patch('/projects/:id', (req, res) => {
-  const index = projects.findIndex(p => p.id === parseInt(req.params.id));
+// PATCH /testimonials/:id - Actualizar un testimonio
+app.patch('/testimonials/:id', (req, res) => {
+  const index = testimonials.findIndex(t => t.id === parseInt(req.params.id));
 
   if (index === -1) {
-    return res.status(404).json({ error: 'Proyecto no encontrado' });
+    return res.status(404).json({ error: 'Referencia no encontrada' });
   }
 
-  projects[index] = { ...projects[index], ...req.body };
-  res.json(projects[index]);
+  testimonials[index] = { ...testimonials[index], ...req.body };
+  res.json(testimonials[index]);
 });
 
-// DELETE /projects/:id - Eliminar un proyecto
-app.delete('/projects/:id', (req, res) => {
-  const index = projects.findIndex(p => p.id === parseInt(req.params.id));
+// DELETE /testimonials/:id - Eliminar un testimonio
+app.delete('/testimonials/:id', (req, res) => {
+  const index = testimonials.findIndex(t => t.id === parseInt(req.params.id));
 
   if (index === -1) {
-    return res.status(404).json({ error: 'Proyecto no encontrado' });
+    return res.status(404).json({ error: 'Referencia no encontrada' });
   }
 
-  const deleted = projects.splice(index, 1);
-  res.json({ message: 'Proyecto eliminado', project: deleted[0] });
+  const deleted = testimonials.splice(index, 1);
+  res.json({ message: 'Referencia eliminada', testimonial: deleted[0] });
 });
 
 app.listen(PORT, () => {
