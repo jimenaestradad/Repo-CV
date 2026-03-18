@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Routes } from '@angular/router';
 import { About } from './features/about/about';
 import { Experience } from './features/experience/experience'
@@ -13,3 +14,13 @@ export const routes: Routes = [
   { path: 'skills', component: Skills },
   { path: 'projects',component: ProjectsComponent},
 ];
+=======
+import { RenderMode, ServerRoute } from '@angular/ssr';
+
+export const serverRoutes: ServerRoute[] = [
+  {
+    path: '**',
+    renderMode: RenderMode.Prerender
+  }
+];
+>>>>>>> origin/dev

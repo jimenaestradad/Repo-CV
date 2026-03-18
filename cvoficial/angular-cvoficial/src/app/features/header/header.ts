@@ -77,6 +77,7 @@ export class Header {
           remainingHeight -= pageCanvas.height;
           position += pageCanvas.height;
 
+
       const pdf = new jsPDF('p', 'mm', 'a4');
       const pageWidth = pdf.internal.pageSize.getWidth(); // mm
       const pageHeight = pdf.internal.pageSize.getHeight(); // mm
@@ -89,6 +90,7 @@ export class Header {
 
       
       const pxPerMm = 96 / 25.4;
+
 
       const canvasWpx = canvas.width;
       const canvasHpx = canvas.height;

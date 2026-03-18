@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 
 :root{
   --accent: #3758d6;     
+=======
+/* src/styles.scss (reemplaza o añade las reglas de :root y .dark-mode) */
+:root{
+  --accent: #3758d6;     /* azul accesible */
+>>>>>>> origin/dev
   --muted: #6b7280;
   --bg: #fafafa;
   --text: #0f172a;
@@ -12,6 +18,7 @@ body {
   color: var(--text);
 }
 
+<<<<<<< HEAD
 
 .dark-mode {
   --bg: #071025;     
@@ -76,3 +83,19 @@ a { color: var(--accent); }
 .page-content {
   padding-top: 2rem;
 }
+=======
+/* Dark mode overrides */
+.dark-mode {
+  --bg: #071025;     /* fondo oscuro */
+  --text: #e6eef8;   /* texto claro */
+  --card: #07192a;   /* tarjetas ligeramente más claras que el fondo */
+  --muted: #9aa6c2;
+  --accent: #4b6bff; /* azul vivo para botones en dark */
+}
+
+/* Ensure links (a) visible if default color used anywhere */
+a { color: var(--accent); }
+
+/* container utility (if not already defined) */
+.container { max-width: 980px; margin: 0 auto; padding: 0 1rem; }
+>>>>>>> origin/dev
