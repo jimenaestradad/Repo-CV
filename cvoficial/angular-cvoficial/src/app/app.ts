@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { Component, OnDestroy } from '@angular/core';
 import { RouterOutlet} from '@angular/router';
@@ -9,10 +10,22 @@ import { About } from './features/about/about';
 import { Skills } from './features/skills/skills';
 import { Experience } from './features/experience/experience';
 import { Education } from './features/education/education';
+=======
+import { Component } from '@angular/core';
+import { Header } from './features/header/header';
+import {About} from './features/about/about'
+import {Experience} from './features/experience/experience'
+import {Education} from './features/education/education';
+import {Skills} from './features/skills/skills';
+import { CV } from './data/cvoficial-data';
+
+
+>>>>>>> origin/dev
 
 @Component({
   selector: 'app-root',
   standalone: true,
+<<<<<<< HEAD
   imports: [RouterOutlet, Header, About, Experience, Education, Skills],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
@@ -60,3 +73,15 @@ export class App implements OnDestroy {
     this.sub?.unsubscribe();
   }
 }
+=======
+  imports: [Header, About, Experience, Education, Skills],
+  
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
+})
+export class AppComponent {
+  cv = CV;
+}
+
+export const App = AppComponent;
+>>>>>>> origin/dev

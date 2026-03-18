@@ -1,0 +1,24 @@
+.layout {
+  display: flex;
+  align-items: flex-start;
+  padding: 3rem 6rem 3rem 2rem;
+  gap: 3rem;
+}
+
+.main-content {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.center-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.center-left app-experience,
+.center-left app-education {
+  width: 100%;
+}

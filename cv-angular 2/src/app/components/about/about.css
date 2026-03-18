@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+.about-container {
+  padding-left: 2rem;
+  padding-right: 6rem;
+  margin-top: 2rem;   
+}
+    .section-title {
+  color: #2f4fb0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1.7rem;
+}
+
+
+
