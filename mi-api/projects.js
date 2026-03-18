@@ -36,7 +36,7 @@ app.get('/testimonials', (req, res) => {
 });
 
 // GET /testimonials/:id - Ver un testimonio específico
-app.get('/testimonials/:id', (req, res) => {cs
+app.get('/testimonials/:id', (req, res) => {
   const testimonial = testimonials.find(t => t.id === parseInt(req.params.id));
 
   if (!testimonial) {
